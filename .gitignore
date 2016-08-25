@@ -1,1 +1,3 @@
-test
+tmp/
+database/
+chemical_db.sqlite

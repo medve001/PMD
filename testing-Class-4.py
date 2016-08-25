@@ -137,7 +137,7 @@ def db_fetch(id_list, column):
     for id_fetch in id_list:
         c.execute("SELECT {} FROM abstracts WHERE id={}".format(column, id_fetch,))  # star means "select all"
         row = str(c.fetchone())
-        print(row)
+        #print(row)
         clean_line = row.replace('"', ' ').replace('.', ' ').replace(':', ' ').replace('?', ' ').replace('_', ' ').replace(',', ' ').replace('(', ' ').replace(')', ' ').replace(';', ' ')
         # print(clean_line)
         for word in clean_line.split():
@@ -219,13 +219,13 @@ litra_dict = collections.Counter(litra_list)
 # ==== Fetching Abstracts from database =======
 atrazine_dict = db_fetch(id_list1, 'abstract')
 
-print(atrazine_dict)
+# print(atrazine_dict)
 print(len(atrazine_dict))
 
 # ==== Fetching Keywords from database =======
 atrazine_key_dict = db_fetch(id_list1, 'keywords')
 
-print(atrazine_key_dict)
+# print(atrazine_key_dict)
 print(len(atrazine_key_dict))
 
 
