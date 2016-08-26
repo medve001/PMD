@@ -30,7 +30,7 @@ time_start = datetime.datetime.now()  # Time Started
 
 # ======== Classes ===============
 
-class Chemical(object):
+class Chemical:
     def __init__(self, name, ret_init='max'):
         self.name = name
         self.ret_init = ret_init
@@ -178,7 +178,7 @@ print('List to be analyzed: {}'.format(chem_list))
 
 # ====== Automated Class instance list generation =======
 # Generation of the list of class instances by list comprehension
-mm = input('How many abstracts to retrieve(for testing, 0 = max)?\n')
+mm = input('How many abstracts to retrieve(for testing, deault ==max)?\n')
 chemicals = [Chemical(chem_list[chem_n], mm) for chem_n in range(len(chem_list))]
 
 print('List of class instances was generated for: ')
