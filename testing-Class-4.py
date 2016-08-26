@@ -178,12 +178,12 @@ print('List to be analyzed: {}'.format(chem_list))
 
 # ====== Automated Class instance list generation =======
 # Generation of the list of class instances by list comprehension
-mm = input('How many abstracts to retrieve(for testing, deault ==max)?\n')
+mm = input('How many abstracts to retrieve(for testing, 0 = max)?\n')
 chemicals = [Chemical(chem_list[chem_n], mm) for chem_n in range(len(chem_list))]
 
 print('List of class instances was generated for: ')
 for inst in chemicals:
-    print(inst.name, inst.ret_max, 'Records', inst.id_list, 'na')
+    print("the {0.name} has {0.ret_max} records in PubMed".format(inst))
 
 # ==== Updating compounds table in database ==========
 
@@ -227,6 +227,7 @@ atrazine_key_dict = db_fetch(id_list1, 'keywords')
 
 # print(atrazine_key_dict)
 print(len(atrazine_key_dict))
+
 
 
 '''
